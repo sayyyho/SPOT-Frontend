@@ -1,11 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import OnBoarding from "./pages/OnBoarding/index.jsx";
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import {GlobalStyle} from './style.js';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App></App>
-  </React.StrictMode>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
+    <GlobalStyle />
+    <App />
+  </>,
 );

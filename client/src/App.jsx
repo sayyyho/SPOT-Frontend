@@ -1,11 +1,15 @@
-import "./App.css";
-import OnBoarding from "./pages/OnBoarding";
+import {BrowserRouter} from 'react-router-dom';
+import Router from './Router';
+import {ThemeProvider} from 'styled-components';
+import theme from './theme';
 
 function App() {
   return (
-    <>
-      <OnBoarding></OnBoarding>
-    </>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
