@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         element: <OnBoarding />,
       },
       {
-        path: '/login',
+        path: '/findKickSpot',
         element: <FindKickSpot />,
 
       }

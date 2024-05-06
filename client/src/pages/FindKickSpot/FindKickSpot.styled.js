@@ -8,3 +8,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const CircleContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20%;
+`
