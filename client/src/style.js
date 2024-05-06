@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 852px;
   }
   #root {
-    background-color: #faeab1;
+    background-color: #ffffff;
     height: 100%;
     width: 100%;
   }

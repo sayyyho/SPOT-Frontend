@@ -1,10 +1,10 @@
-import * as S from "./Image.styled";
-import OnBoarding from "../../assets/images/onBoarding.png";
+import * as S from './Image.styled';
+import Intro from '../../assets/images/Intro.png';
 
 function Image() {
   return (
     <S.Container>
-      <S.StyledImage src={OnBoarding}></S.StyledImage>
+      <S.StyledImage src={Intro}></S.StyledImage>
     </S.Container>
   );
 }

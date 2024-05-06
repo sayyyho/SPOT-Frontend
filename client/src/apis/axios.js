@@ -1,7 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: "https://api.ice-spot.site/",
+  baseURL: 'https://api.ice-spot.site/',
   timeout: 10000,
-  headers: { "Content-Type": "application/json" },
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
 });
