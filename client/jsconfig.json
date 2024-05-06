@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"] // include에 포함된 디렉토리만 적용된다. include를 사용하지 않으면 모든 디렉토리에 적용된다.
+}
