@@ -9,6 +9,7 @@ function OnBoarding() {
     const response = login();
     console.log(response);
   };
+
   return (
     <S.Container>
       <Image></Image>
