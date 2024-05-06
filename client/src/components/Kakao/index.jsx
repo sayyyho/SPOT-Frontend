@@ -4,9 +4,19 @@ import PropTypes from "prop-types";
 
 function Kakao(props) {
   return (
-    <S.Container>
-      <S.StyledImage src={KakaoIcon} onClick={props.onClick}></S.StyledImage>
-    </S.Container>
+    <form
+      method="POST"
+      action="https://api.ice-spot.site/oauth2/authorization/kakao"
+    >
+      <S.Container>
+        <button type="submit">
+          <S.StyledImage
+            src={KakaoIcon}
+            onClick={props.onClick}
+          ></S.StyledImage>
+        </button>
+      </S.Container>
+    </form>
   );
 }
 
