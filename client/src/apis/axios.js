@@ -8,7 +8,7 @@ export const instance = axios.create({
   headers: {
     Authorization: `Bearer ${accessToken}`,
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://api.ice-spot.site',
   },
 });
 
