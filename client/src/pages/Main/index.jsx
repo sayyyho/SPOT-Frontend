@@ -1,6 +1,12 @@
 import {Button} from '@/components/Button';
+import React from 'react';
+import Cookies from 'js-cookie';
+const accessToken = Cookies.get('accessToken');
 
 export const Main = () => {
+  React.useEffect(() => {
+    console.log(accessToken);
+  }, []);
   return (
     <div>
       <Button
