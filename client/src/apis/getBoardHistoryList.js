@@ -3,7 +3,7 @@ import {instance} from "./axios";
 
 export const getBoardHistoryList = async () => {
   try {
-    return await instance.get(`boarding-record`);
+    return await instance.get(`api/boarding-record`);
   } catch (error) {
     if (isAxiosError(error)) {
       throw error;
