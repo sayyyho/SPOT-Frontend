@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-
-const accessToken = Cookies.get('accessToken');
+const accessToken = Cookies.get('access_token');
 
 export const instance = axios.create({
   baseURL: 'https://api.ice-spot.site/',

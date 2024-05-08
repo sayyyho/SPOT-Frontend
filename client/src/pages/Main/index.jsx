@@ -1,11 +1,14 @@
-import {Button} from '@/components/Button';
 import React from 'react';
-import Cookies from 'js-cookie';
-const accessToken = Cookies.get('access_token');
+import {findKickboard} from '@/apis/findKickboard';
+import {Button} from '@/components/Button';
 
 export const Main = () => {
   React.useEffect(() => {
-    console.log(accessToken);
+    const getData = async () => {
+      const res = await findKickboard();
+      console.log(res);
+    };
+    getData();
   }, []);
   return (
     <div>
