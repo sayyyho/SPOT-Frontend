@@ -1,7 +1,7 @@
 import {Button} from '@/components/Button';
 import React from 'react';
 import Cookies from 'js-cookie';
-const accessToken = Cookies.get('accessToken');
+const accessToken = Cookies.get('access_token');
 
 export const Main = () => {
   React.useEffect(() => {
