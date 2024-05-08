@@ -8,4 +8,6 @@ export const Button = styled.button`
   padding: ${(props) => (props.padding ? props.padding : 0)};
   border-radius: ${(props) => (props.radius ? props.radius : 0)};
   color: ${(props) => (props.color ? props.color : 'black')};
+  background-color: ${(props) =>
+    props.background ? props.background : 'black'};
 `;
