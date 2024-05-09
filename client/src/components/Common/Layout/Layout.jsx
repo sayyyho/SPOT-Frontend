@@ -1,11 +1,11 @@
-import Header from "@/components/Common/Header/index.jsx";
-import PropTypes from "prop-types";
+import Header from '@/components/Common/Header/index.jsx';
+import PropTypes from 'prop-types';
 
 const Layout = (props) => {
   return (
     <div>
       {props.showHeader && <Header />}
-        {props.children}
+      {props.children}
     </div>
   );
 };
