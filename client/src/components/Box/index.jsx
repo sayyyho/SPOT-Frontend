@@ -12,7 +12,10 @@ function Box(props) {
       color={props.color}
       radius={props.radius}
       isFlex={props.isFlex}
+      alignProp={props.alignProp}
+      justifyProp={props.justifyProp}
       flexDirection={props.flexDirection}
+      gapProp={props.gapProp}
     >
       {props.children}
     </S.Box>
@@ -29,7 +32,10 @@ Box.propTypes = {
   onClick: PropTypes.func,
   color: PropTypes.string,
   isFlex: PropTypes.bool,
+  alignProp: PropTypes.string,
+  justifyProp: PropTypes.string,
   flexDirection: PropTypes.string,
+  gapProp: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

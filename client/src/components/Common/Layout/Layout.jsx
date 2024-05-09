@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Layout = (props) => {
   return (
-    <S.Layout>
+    <S.Layout isBetween={props.isBetween} gap={props.gap}>
       {props.showHeader && <Header item={props.headerItem} />}
       {props.children}
     </S.Layout>
@@ -14,6 +14,8 @@ const Layout = (props) => {
 Layout.propTypes = {
   showHeader: PropTypes.bool,
   headerItem: PropTypes.string,
+  isBetween: PropTypes.bool,
+  gap: PropTypes.string,
 };
 
 export default Layout;
