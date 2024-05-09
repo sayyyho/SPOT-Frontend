@@ -7,8 +7,10 @@ const {kakao} = window;
 
 export const FindSpot = () => {
   useEffect(() => {
-    const response = findKickboard();
-    console.log(response.data.data);
+    const getPin = async () => {
+      const response = findKickboard();
+      return response;
+    };
     const container = document.getElementById('map');
     const options = {
       center: new kakao.maps.LatLng(
@@ -19,6 +21,8 @@ export const FindSpot = () => {
     };
     const map = new kakao.maps.Map(container, options);
     console.log(map);
+    const res = getPin();
+    console.log(res);
   }, []);
   return (
     <S.Wrapper id="map">
