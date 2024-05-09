@@ -14,7 +14,6 @@ const Layout = (props) => {
 Layout.propTypes = {
   showHeader: PropTypes.bool,
   headerItem: PropTypes.string,
-  isBetween: PropTypes.bool,
   gap: PropTypes.string,
   dong: PropTypes.string,
 };

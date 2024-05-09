@@ -169,7 +169,7 @@ export const Main = () => {
               <Text isFlex={true} margin="0 0 0.2rem 0">
                 주차 인증하기
               </Text>
-              <Image src="auth.png" />
+              <Image src="auth_kick.png" />
             </Box>
           </Box>
           <Box
