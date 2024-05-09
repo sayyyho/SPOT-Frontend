@@ -5,15 +5,21 @@ import {Image} from '@/components/Common/Image';
 
 export const Main = () => {
   return (
-    <Layout showHeader={true} headerItem="location">
+    <Layout
+      showHeader={true}
+      headerItem="location"
+      isBetween={false}
+      gap="1rem"
+    >
       <Box
-        width="90%"
-        height="30vh"
+        width="85%"
+        height="40vh"
         radius="1rem 1rem 1rem 1rem"
         background="#3A5AFE"
         isFlex={true}
         flexDirection="column"
         alignProp="center"
+        margin="0 0 2rem 0"
       >
         <Box width="90%" height="30%" isFlex={true}>
           <Box width="80%" isFlex={true} flexDirection={'column'}>
@@ -53,15 +59,61 @@ export const Main = () => {
             </Text>
           </Box>
         </Box>
+        <Box
+          width="100%"
+          height="12vh"
+          radius="1rem 1rem 1rem 1rem"
+          background="#F8F8FA"
+          isFlex={true}
+          alignProp="center"
+        >
+          <Box
+            width="30%"
+            height="100%"
+            isFlex={true}
+            flexDirection="column"
+            alignProp={'center'}
+          >
+            <Text isFlex={true}>포인트</Text>
+            <Text isFlex={true}>350점</Text>
+          </Box>
+          <Box
+            width="30%"
+            height="100%"
+            isFlex={true}
+            flexDirection="column"
+            alignProp={'center'}
+          >
+            <Text isFlex={true}>미세먼지</Text>
+            <Text isFlex={true} color="blue">
+              보통
+            </Text>
+          </Box>
+          <Box
+            width="30%"
+            height="100%"
+            isFlex={true}
+            flexDirection="column"
+            alignProp={'center'}
+          >
+            <Text isFlex={true}>초미세먼지</Text>
+            <Text isFlex={true} color="red">
+              나쁨
+            </Text>
+          </Box>
+        </Box>
+      </Box>
+      <Box width="90%" height="20vh" isFlex={true} gapProp="1rem">
+        <Box width="45%" radius="20px" background="#F8F8FA"></Box>
+        <Box width="45%" radius="20px" background="#F8F8FA"></Box>
       </Box>
       <Box
-        width="90%"
+        width="85%"
         height="10vh"
-        radius="1rem 1rem 1rem 1rem"
-        background="#F8F8FA"
         isFlex={true}
-        flexDirection="column"
-        alignProp="center"
+        gapProp="1rem"
+        radius="20px"
+        background="#F8F8FA"
       ></Box>
     </Layout>
   );
