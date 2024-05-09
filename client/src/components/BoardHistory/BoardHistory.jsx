@@ -9,8 +9,8 @@ const BoardHistory = (props) => {
       <S.InfoWrapper>
         <S.Date>{props.boardHistory.createdAt}</S.Date>
         <S.Contents>
-          {props.boardHistory.distance}
-          {props.boardHistory.time}
+          주행 거리 : {props.boardHistory.distance}<br/>
+          주행 시간 : {props.boardHistory.time}
         </S.Contents>
       </S.InfoWrapper>
       <S.PointBoxWrapper>
