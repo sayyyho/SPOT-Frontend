@@ -17,4 +17,5 @@ export const Box = styled.div`
     props.isFlex ? `${props.flexDirection}` : 'row'};
   align-items: ${(props) =>
     props.alignProp ? `${props.alignProp}` : 'stretch'};
+  cursor: ${(props) => (props.isCursor ? 'pointer' : 'default')};
 `;

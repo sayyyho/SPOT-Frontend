@@ -58,14 +58,12 @@ export const Main = () => {
             background="#F8F8FA"
             isFlex={true}
             alignProp="center"
+            isCursor={true}
+            onClick={() => {
+              handleClick('/history');
+            }}
           >
-            <Text
-              color="blue"
-              isFlex={true}
-              onClick={() => {
-                handleClick('/history');
-              }}
-            >
+            <Text color="blue" isFlex={true}>
               탑승 이력
             </Text>
           </Box>
@@ -122,6 +120,10 @@ export const Main = () => {
           isFlex={true}
           flexDirection="column"
           alignProp="center"
+          isCursor={true}
+          onClick={() => {
+            handleClick('/findSpot');
+          }}
         >
           <Text isFlex={true} margin="0 0 0.2rem 0">
             주차장 찾기
@@ -135,6 +137,10 @@ export const Main = () => {
           isFlex={true}
           flexDirection="column"
           alignProp="center"
+          isCursor={true}
+          onClick={() => {
+            handleClick('/finishSpot');
+          }}
         >
           <Text isFlex={true} margin="0 0 0.2rem 0">
             주차 인증하기
@@ -153,7 +159,16 @@ export const Main = () => {
         <Box width="20%" isFlex={true} alignProp="center">
           <Image src="report.png" />
         </Box>
-        <Box width="80%" isFlex={true} flexDirection="column">
+        <Box
+          width="80%"
+          isFlex={true}
+          flexDirection="column"
+          isCursor={true}
+          onClick={() => {
+            location.href =
+              'https://seoul-pm.eseoul.go.kr/mobile/report/qrcode.do';
+          }}
+        >
           <Text isFlex={true}>불법 주차 킥보드 신고하기</Text>
           <Text fontSize="7px" isFlex={true}>
             횡단보도, 건물 앞에 무단 주차한 킥보드를 제보해주세요
