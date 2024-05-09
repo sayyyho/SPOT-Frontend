@@ -1,13 +1,19 @@
 import Image from '../../components/Image';
 import KakaoLogin from '../../components/KakaoLogin';
-import Text from '../../components/Text';
+import Text from '../../components/Common/Text';
 import * as S from './OnBoarding.styled';
 
 function OnBoarding() {
   return (
     <S.Container>
       <Image></Image>
-      <Text></Text>
+      <S.TextArea>
+        <Text isFlex={true}>
+          <h2>내 주변 킥보드 주차장 찾기</h2>
+        </Text>
+        <Text isFlex={true}>올바른 공유킥보드 주차 문화 만들기</Text>
+        <Text isFlex={true}>SPOT에서 함께 시작하세요!</Text>
+      </S.TextArea>
       <KakaoLogin></KakaoLogin>
     </S.Container>
   );
