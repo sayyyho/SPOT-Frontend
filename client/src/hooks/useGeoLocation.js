@@ -1,10 +1,11 @@
 import {useEffect, useState} from 'react';
+import {getLoc} from '@/apis/getLocation';
 
 const useGeoLocation = () => {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
-    const getLocation = () => {
+    const getLocation = async () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -28,6 +29,9 @@ const useGeoLocation = () => {
     if (location) {
       localStorage.setItem('latitude', location.latitude);
       localStorage.setItem('longitude', location.longitude);
+      getLoc(location.latitude, location.longitude).then((res) => {
+        console.log(res.data.data);
+      });
     }
   }, [location]);
 
