@@ -27,17 +27,19 @@ export const Main = () => {
         margin="0 0 1rem 0"
       >
         <Box width="90%" height="30%" isFlex={true}>
-          <Box width="75%" isFlex={true} flexDirection={'column'}>
+          <Box width="80%" isFlex={true} flexDirection={'column'}>
             <Text color="white">공유 킥보드로 만들어가는</Text>
             <Text color="white">스마트 에코 도시</Text>
           </Box>
-          <Box width="25%" isFlex={true} flexDirection={'column'}>
+          <Box width="17%" isFlex={true} flexDirection={'column'}>
             <Box width="100%" isFlex={true} alignProp={'center'}>
               <Image src="temp.png" />
               <Text color="white">17도</Text>
             </Box>
             <Box width="100%" isFlex={true} alignProp={'center'}>
-              <Image src="humidity.png" />
+              <Box padding='2px'>
+                <Image src="humidity.png" />
+              </Box>
               <Text color="white">30%</Text>
             </Box>
           </Box>
@@ -170,7 +172,7 @@ export const Main = () => {
           }}
         >
           <Text isFlex={true}>불법 주차 킥보드 신고하기</Text>
-          <Text fontSize="7px" isFlex={true}>
+          <Text fontSize="8.3px" isFlex={true}>
             횡단보도, 건물 앞에 무단 주차한 킥보드를 제보해주세요
           </Text>
         </Box>
