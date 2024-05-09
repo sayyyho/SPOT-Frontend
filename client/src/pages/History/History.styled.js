@@ -2,15 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 94%;
-  height: 70vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-`;
-
-export const Title = styled.p`
-  font-size: 1.75rem;
-  margin-top: 0;
+  //align-items: center;
 `;
 
 export const BoardHistoryCard = styled.div`
