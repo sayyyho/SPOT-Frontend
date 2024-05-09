@@ -8,7 +8,7 @@ import useGeolocation from '@/hooks/useGeoLocation';
 import {Wrapper} from '@/components/Common/Wrapper';
 
 export const Main = () => {
-  const {loc, dong, temp, humidity} = useGeolocation();
+  const {loc, dong, temp, humidity, point, pm10, pm25} = useGeolocation();
   const navigate = useNavigate();
   const handleClick = (location) => {
     navigate(location);
@@ -48,7 +48,7 @@ export const Main = () => {
                 >
                   <Image src="temp.png" height="50%" />
                   <Text color="white" fontSize="0.6rem">
-                    {temp}
+                    {temp + '도'}
                   </Text>
                 </Box>
                 <Box
@@ -61,7 +61,7 @@ export const Main = () => {
                 >
                   <Image src="humidity.png" height="50%" />
                   <Text margin="0 0 0 0.2rem" color="white" fontSize="0.6rem">
-                    {humidity}
+                    {humidity + '%'}
                   </Text>
                 </Box>
               </Box>
@@ -108,7 +108,7 @@ export const Main = () => {
                 alignProp={'center'}
               >
                 <Text isFlex={true}>포인트</Text>
-                <Text isFlex={true}>350점</Text>
+                <Text isFlex={true}>{point}</Text>
               </Box>
               <Box
                 width="30%"
@@ -119,7 +119,7 @@ export const Main = () => {
               >
                 <Text isFlex={true}>미세먼지</Text>
                 <Text isFlex={true} color="blue">
-                  보통
+                  {pm10}
                 </Text>
               </Box>
               <Box
@@ -131,7 +131,7 @@ export const Main = () => {
               >
                 <Text isFlex={true}>초미세먼지</Text>
                 <Text isFlex={true} color="red">
-                  나쁨
+                  {pm25}
                 </Text>
               </Box>
             </Box>
