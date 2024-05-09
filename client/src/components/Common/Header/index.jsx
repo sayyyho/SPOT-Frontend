@@ -16,7 +16,7 @@ const Header = (props) => {
       ) : (
         <>
           <Image src="location.png" alt="위치"></Image>
-          <Text>충무로</Text>
+          <Text>{props.dong}</Text>
         </>
       )}
     </S.Container>
@@ -26,6 +26,7 @@ const Header = (props) => {
 Header.propTypes = {
   item: PropTypes.string.isRequired,
   isAbsolute: PropTypes.bool,
+  dong: PropTypes.string,
 };
 
 export default Header;

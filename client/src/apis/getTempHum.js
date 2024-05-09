@@ -1,12 +1,12 @@
 import {isAxiosError} from 'axios';
 import {instance} from './axios';
 
-export const findKickboard = async () => {
+export const getTempHum = async (latitude, longitude) => {
   try {
-    const response = await instance.get(`/api/kickboard`, {
+    const response = await instance.get(`/api/district/temperature`, {
       params: {
-        lat: localStorage.getItem('latitude'),
-        lon: localStorage.getItem('longitude'),
+        lat: latitude,
+        lon: longitude,
       },
     });
     return response;
