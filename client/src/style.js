@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column
   }
 
-  @media (max-width: 394px) {
+  @media (max-width: 392px) {
     body {
       width: 100vw;
       height: 100vh;
