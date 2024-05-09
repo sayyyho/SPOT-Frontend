@@ -9,4 +9,8 @@ export const Text = styled.div`
   flex-direction: ${(props) =>
     props.flexDirection || 'row'}; // flex-direction 기본값 설정
   color: ${(props) => props.color};
+  margin: ${(props) => (props.margin ? `${props.margin}` : '0')};
+  font-size: ${(props) => (props.fontSize ? `${props.fontSize}` : '1rem')};
+  position: ${(props) => (props.isAbsolute ? 'absolute' : 'static')};
+  z-index: 3;
 `;

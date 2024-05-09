@@ -10,12 +10,13 @@ const History = () => {
     <Layout showHeader={true} headerItem="arrow">
       {personInfo && (
         <S.Container>
+          <h2>탑승 이력 조회하기</h2><br />
           <S.BoardHistoryCard>
             <S.BoardHistoryCardContent>
-              {personInfo.nickname}님,
+              <b>{personInfo.nickname}</b>님,
               <br />
-              {personInfo.recordCount}번의 탑승 이력이 있어요.
-              <br />총 {personInfo.point}포인트를 적립했어요!
+              <b>{personInfo.recordCount}번</b>의 탑승 이력이 있어요.
+              <br />총 <b>{personInfo.point}포인트</b>를 적립했어요!
             </S.BoardHistoryCardContent>
           </S.BoardHistoryCard>
           <BoardHistoryList boardHistoryListValue={boardHistoryListValue} />
