@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const TextArea = styled.div`
-  padding: 5vh 0 5vh 0;
+  padding: 3vh 0 3vh 0;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -33,4 +33,11 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
   }
+
+  @media (max-width: 393px), (max-height: 852px) {
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
 `;
