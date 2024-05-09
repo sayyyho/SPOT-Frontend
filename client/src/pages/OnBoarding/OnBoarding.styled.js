@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const TextArea = styled.div`
-  padding: 5vh 0 5vh 0;
+  padding: 5vh 0 4vh 0;
   width: 100%;
   display: flex;
   flex-direction: column;
