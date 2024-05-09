@@ -5,7 +5,7 @@ import Layout from '@/components/Common/Layout/Layout';
 
 function FindKickSpot() {
   return (
-    <Layout showHeader={true} headerItem="arrow">
+    <Layout showHeader={true} headerItem="arrow" gap="5%">
       <S.Container>
           <ParkText></ParkText>
           <Parking></Parking>
