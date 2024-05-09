@@ -23,8 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body  {
-    width: 393px;
-    height: 852px;
+    width: 390px;
+    height: 844px;
   }
   #root {
     background-color: #ffffff;
