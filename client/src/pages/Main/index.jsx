@@ -1,6 +1,5 @@
 import React from 'react';
 import {findKickboard} from '@/apis/findKickboard';
-import {Wrapper} from '@/components/Common/Wrapper';
 
 export const Main = () => {
   React.useEffect(() => {
@@ -11,5 +10,5 @@ export const Main = () => {
     };
     getData();
   }, []);
-  return <Wrapper></Wrapper>;
+  return <></>;
 };

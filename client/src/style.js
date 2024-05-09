@@ -31,7 +31,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column
   }
 
   @media (max-width: 393px), (max-height: 852px) {
