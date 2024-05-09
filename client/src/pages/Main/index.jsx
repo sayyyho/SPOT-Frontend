@@ -27,10 +27,10 @@ export const Main = () => {
             alignProp="center"
             margin="0 0 1rem 0"
           >
-            <Box width="90%" height="30%" isFlex={true}>
-              <Box width="75%" isFlex={true} flexDirection={'column'}>
-                <Text color="white">공유 킥보드로 만들어가는</Text>
-                <Text color="white">스마트 에코 도시</Text>
+            <Box width="90%" height="40%" isFlex={true}>
+              <Box width="78%" isFlex={true} flexDirection={'column'}>
+                <Text color="white"fontSize='19px'>공유 킥보드로 만들어가는</Text>
+                <Text color="white"fontSize='19px'>스마트 에코 도시</Text>
               </Box>
               <Box
                 width="25%"
@@ -68,7 +68,7 @@ export const Main = () => {
             </Box>
             <Box
               width="90%"
-              height="65%"
+              height="58%"
               isFlex={true}
               // padding={'1rem 0 0 0'}
               flexDirection="column"
@@ -194,7 +194,7 @@ export const Main = () => {
               }}
             >
               <Text isFlex={true}>불법 주차 킥보드 신고하기</Text>
-              <Text fontSize="7px" isFlex={true}>
+              <Text fontSize="9px" isFlex={true}>
                 횡단보도, 건물 앞에 무단 주차한 킥보드를 제보해주세요
               </Text>
             </Box>
@@ -206,6 +206,7 @@ export const Main = () => {
           <Text isFlex={true} color="blue" margin="1rem 0 0 0">
             현재 위치를 불러오는 중...
           </Text>
+
         </Wrapper>
       )}
     </>
