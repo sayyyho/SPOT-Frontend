@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Layout = (props) => {
   return (
     <S.Layout gap={props.gap}>
-      {props.showHeader && <Header item={props.headerItem} />}
+      {props.showHeader && <Header item={props.headerItem} dong={props.dong} />}
       {props.children}
     </S.Layout>
   );
@@ -15,6 +15,7 @@ Layout.propTypes = {
   showHeader: PropTypes.bool,
   headerItem: PropTypes.string,
   gap: PropTypes.string,
+  dong: PropTypes.string,
 };
 
 export default Layout;
