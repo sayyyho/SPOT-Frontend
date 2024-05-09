@@ -104,7 +104,16 @@ export const Main = () => {
         </Box>
       </Box>
       <Box width="90%" height="20vh" isFlex={true} gapProp="1rem">
-        <Box width="45%" radius="20px" background="#F8F8FA"></Box>
+        <Box
+          width="45%"
+          radius="20px"
+          background="#F8F8FA"
+          isFlex={true}
+          flexDirection="column"
+          alignProp="center"
+        >
+          <Text isFlex={true}>주차장 찾기</Text>
+        </Box>
         <Box width="45%" radius="20px" background="#F8F8FA"></Box>
       </Box>
       <Box
