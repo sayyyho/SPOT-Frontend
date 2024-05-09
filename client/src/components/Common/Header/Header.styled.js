@@ -9,7 +9,6 @@ export const Container = styled.div`
 `;
 
 export const Arrow = styled.img`
-  width: 5%;
-  height: 5%;
+  height: 100%;
   display: inline-block;
 `;
