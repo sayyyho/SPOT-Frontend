@@ -5,7 +5,7 @@ export const Image = (props) => {
   return (
     <>
       <S.Image
-        src={`/src/assets/images/${props.src}`}
+        src={`https://raw.githubusercontent.com/Dongguk-ICE/SPOT-Frontend/dev/client/src/assets/images/${props.src}`}
         alt={props.alt}
         height={props.height}
         width={props.width}
