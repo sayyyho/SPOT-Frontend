@@ -9,8 +9,8 @@ export const useBoardHistory = () => {
     getBoardHistoryList()
       .then((res) => {
         console.log(res);
-        setBoardHistoryListValue(res.data.records);
-        setPersonInfo(res.data.person);
+        setBoardHistoryListValue(res.data.data.records);
+        setPersonInfo(res.data.data.person);
       })
       .catch((err) => {
         console.log(err);
