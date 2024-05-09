@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Layout = (props) => {
   return (
-    <S.Layout isBetween={props.isBetween} gap={props.gap}>
+    <S.Layout gap={props.gap}>
       {props.showHeader && <Header item={props.headerItem} />}
       {props.children}
     </S.Layout>

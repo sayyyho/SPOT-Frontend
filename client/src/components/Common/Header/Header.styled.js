@@ -5,5 +5,7 @@ export const Container = styled.div`
   width: 90%;
   height: 7vh;
   display: flex;
+  position: ${(props) => (props.isAbsolute ? 'absolute' : 'static')};
+  z-index: 999;
   align-items: center;
 `;
