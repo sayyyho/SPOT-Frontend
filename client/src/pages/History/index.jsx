@@ -7,7 +7,7 @@ const History = () => {
   const {boardHistoryListValue, personInfo} = useBoardHistory();
   console.log(personInfo);
   return (
-    <Layout showHeader={true}>
+    <Layout showHeader={true} headerItem="arrow">
       {personInfo && (
         <S.Container>
           <S.BoardHistoryCard>

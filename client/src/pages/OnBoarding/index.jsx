@@ -8,11 +8,11 @@ function OnBoarding() {
     <S.Container>
       <Image></Image>
       <S.TextArea>
-        <Text>
+        <Text isFlex={true}>
           <h2>내 주변 킥보드 주차장 찾기</h2>
         </Text>
-        <Text>올바른 공유킥보드 주차 문화 만들기</Text>
-        <Text>SPOT에서 함께 시작하세요!</Text>
+        <Text isFlex={true}>올바른 공유킥보드 주차 문화 만들기</Text>
+        <Text isFlex={true}>SPOT에서 함께 시작하세요!</Text>
       </S.TextArea>
       <KakaoLogin></KakaoLogin>
     </S.Container>

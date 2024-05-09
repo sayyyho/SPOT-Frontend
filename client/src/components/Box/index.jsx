@@ -9,8 +9,13 @@ function Box(props) {
       margin={props.margin}
       padding={props.padding}
       background={props.background}
+      color={props.color}
       radius={props.radius}
-    ></S.Box>
+      isFlex={props.isFlex}
+      flexDirection={props.flexDirection}
+    >
+      {props.children}
+    </S.Box>
   );
 }
 
@@ -22,6 +27,13 @@ Box.propTypes = {
   radius: PropTypes.string.isRequired,
   background: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.string,
+  isFlex: PropTypes.bool,
+  flexDirection: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 export default Box;
