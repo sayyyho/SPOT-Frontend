@@ -8,15 +8,15 @@ import useGeolocation from '@/hooks/useGeoLocation';
 import {Wrapper} from '@/components/Common/Wrapper';
 
 export const Main = () => {
-  const loc = useGeolocation();
+  const {loc, dong} = useGeolocation();
   const navigate = useNavigate();
   const handleClick = (location) => {
     navigate(location);
   };
   return (
     <>
-      {loc || localStorage.getItem('latitude') ? (
-        <Layout showHeader={true} headerItem="location" gap="1rem">
+      {(loc && dong) || localStorage.getItem('latitude') ? (
+        <Layout showHeader={true} headerItem="location" gap="1rem" dong={dong}>
           <Box
             width="90%"
             height="45vh"

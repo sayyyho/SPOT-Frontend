@@ -3,6 +3,7 @@ import {getLoc} from '@/apis/getLocation';
 
 const useGeoLocation = () => {
   const [location, setLocation] = useState(null);
+  const [dong, setDong] = useState(null);
 
   useEffect(() => {
     const getLocation = async () => {
@@ -30,12 +31,12 @@ const useGeoLocation = () => {
       localStorage.setItem('latitude', location.latitude);
       localStorage.setItem('longitude', location.longitude);
       getLoc(location.latitude, location.longitude).then((res) => {
-        console.log(res.data.data);
+        setDong(res.data.data.location);
       });
     }
   }, [location]);
 
-  return location;
+  return {location, dong};
 };
 
 export default useGeoLocation;
