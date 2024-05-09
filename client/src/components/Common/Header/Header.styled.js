@@ -1,15 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 3% 0 3% 0;  
+  margin: 1rem 0 1rem 0;
   width: 100%;
-  height: 7%;
+  height: 7vh;
   display: flex;
   align-items: center;
 `;
 
 export const Arrow = styled.img`
-  width: 5%;
-  height: 5%;
+  height: 100%;
   display: inline-block;
 `;

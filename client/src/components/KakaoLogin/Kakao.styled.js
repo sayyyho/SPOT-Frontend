@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 80%;
-  height: 15vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 export const StyledImage = styled.img`
-  width: 100%;
-  height: 35%;
+  /* width: 80%; */
 `;
