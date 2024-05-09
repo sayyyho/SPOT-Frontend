@@ -31,10 +31,38 @@ export const Main = () => {
             </Box>
           </Box>
         </Box>
-        <Box height="65%" isFlex={true} padding={'1rem 0 0 0'}>
+        <Box
+          width="90%"
+          height="65%"
+          isFlex={true}
+          // padding={'1rem 0 0 0'}
+          flexDirection="column"
+          alignProp="center"
+        >
           <Image src="forest.png" height={'74px'} />
+          <Box
+            width="60%"
+            height="2.5rem"
+            radius="7px"
+            background="#F8F8FA"
+            isFlex={true}
+            alignProp="center"
+          >
+            <Text color="blue" isFlex={true}>
+              탑승 이력
+            </Text>
+          </Box>
         </Box>
       </Box>
+      <Box
+        width="90%"
+        height="10vh"
+        radius="1rem 1rem 1rem 1rem"
+        background="#F8F8FA"
+        isFlex={true}
+        flexDirection="column"
+        alignProp="center"
+      ></Box>
     </Layout>
   );
 };
