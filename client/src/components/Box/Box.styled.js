@@ -10,6 +10,9 @@ export const Box = styled.div`
   color: ${(props) => (props.color ? props.color : 'black')};
   background-color: ${(props) => `${props.background}`};
   display: ${(props) => (props.isFlex ? 'flex' : 'block')};
-  justify-content: ${(props) => (props.isFlex ? 'center' : 'none')};
-  flex-direction: ${(props) => `${props.flexDirection}`};
+  justify-content: ${(props) => (props.isFlex ? 'center' : 'stretch')};
+  flex-direction: ${(props) =>
+    props.isFlex ? `${props.flexDirection}` : 'row'};
+  align-items: ${(props) =>
+    props.alignProp ? `${props.alignProp}` : 'stretch'};
 `;
