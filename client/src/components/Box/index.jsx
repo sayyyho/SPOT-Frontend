@@ -12,6 +12,8 @@ function Box(props) {
       color={props.color}
       radius={props.radius}
       isFlex={props.isFlex}
+      alignProp={props.alignProp}
+      justifyProp={props.justifyProp}
       flexDirection={props.flexDirection}
     >
       {props.children}
@@ -29,6 +31,8 @@ Box.propTypes = {
   onClick: PropTypes.func,
   color: PropTypes.string,
   isFlex: PropTypes.bool,
+  alignProp: PropTypes.string,
+  justifyProp: PropTypes.string,
   flexDirection: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
