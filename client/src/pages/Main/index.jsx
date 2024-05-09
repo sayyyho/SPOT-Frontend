@@ -112,9 +112,24 @@ export const Main = () => {
           flexDirection="column"
           alignProp="center"
         >
-          <Text isFlex={true}>주차장 찾기</Text>
+          <Text isFlex={true} margin="0 0 0.2rem 0">
+            주차장 찾기
+          </Text>
+          <Image src="map.png" />
         </Box>
-        <Box width="45%" radius="20px" background="#F8F8FA"></Box>
+        <Box
+          width="45%"
+          radius="20px"
+          background="#F8F8FA"
+          isFlex={true}
+          flexDirection="column"
+          alignProp="center"
+        >
+          <Text isFlex={true} margin="0 0 0.2rem 0">
+            주차 인증하기
+          </Text>
+          <Image src="auth.png" />
+        </Box>
       </Box>
       <Box
         width="85%"
@@ -123,7 +138,17 @@ export const Main = () => {
         gapProp="1rem"
         radius="20px"
         background="#F8F8FA"
-      ></Box>
+      >
+        <Box width="20%" isFlex={true} alignProp="center">
+          <Image src="report.png" />
+        </Box>
+        <Box width="80%" isFlex={true} flexDirection="column">
+          <Text isFlex={true}>불법 주차 킥보드 신고하기</Text>
+          <Text fontSize="7px" isFlex={true}>
+            횡단보도, 건물 앞에 무단 주차한 킥보드를 제보해주세요
+          </Text>
+        </Box>
+      </Box>
     </Layout>
   );
 };
