@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 78%;
-  height: 48vh;
+  height: 39vh;
 `;
 
 export const StyledImage = styled.img`
