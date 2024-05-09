@@ -27,21 +27,22 @@ export const Main = () => {
             alignProp="center"
             margin="0 0 1rem 0"
           >
-            <Box width="90%" height="40%" isFlex={true}>
+            <Box width="90%" height="30%" isFlex={true}>
               <Box width="78%" isFlex={true} flexDirection={'column'}>
-                <Text color="white"fontSize='19px'>공유 킥보드로 만들어가는</Text>
-                <Text color="white"fontSize='19px'>스마트 에코 도시</Text>
+                <Text color="white"fontSize='15px'>공유 킥보드로 만들어가는</Text>
+                <Text color="white"fontSize='15px'>스마트 에코 도시</Text>
               </Box>
               <Box
-                width="25%"
+                width="15%"
                 isFlex={true}
                 flexDirection={'column'}
                 alignProp="center"
                 justifyProp="center"
+                padding='10px'
               >
                 <Box
                   width="100%"
-                  height="50%"
+                  height="60%"
                   isFlex={true}
                   alignProp={'center'}
                   justifyProp="center"
@@ -70,6 +71,7 @@ export const Main = () => {
               width="90%"
               height="58%"
               isFlex={true}
+              margin='10px'
               // padding={'1rem 0 0 0'}
               flexDirection="column"
               alignProp="center"
@@ -87,7 +89,7 @@ export const Main = () => {
                   handleClick('/history');
                 }}
               >
-                <Text color="blue" isFlex={true}>
+                <Text color="blue" isFlex={true} fontSize='14px'>
                   탑승 이력
                 </Text>
               </Box>
@@ -107,7 +109,7 @@ export const Main = () => {
                 flexDirection="column"
                 alignProp={'center'}
               >
-                <Text isFlex={true}>포인트</Text>
+                <Text isFlex={true} fontSize='15px'>포인트</Text>
                 <Text isFlex={true}>{point}</Text>
               </Box>
               <Box
@@ -117,7 +119,7 @@ export const Main = () => {
                 flexDirection="column"
                 alignProp={'center'}
               >
-                <Text isFlex={true}>미세먼지</Text>
+                <Text isFlex={true} fontSize='15px'>미세먼지</Text>
                 <Text isFlex={true} color="blue">
                   {pm10}
                 </Text>
@@ -129,7 +131,7 @@ export const Main = () => {
                 flexDirection="column"
                 alignProp={'center'}
               >
-                <Text isFlex={true}>초미세먼지</Text>
+                <Text isFlex={true} fontSize='15px'>초미세먼지</Text>
                 <Text isFlex={true} color="red">
                   {pm25}
                 </Text>
@@ -149,7 +151,7 @@ export const Main = () => {
                 handleClick('/findSpot');
               }}
             >
-              <Text isFlex={true} margin="0 0 0.2rem 0">
+              <Text isFlex={true} margin="0 0 0.2rem 0" fontSize='15px'>
                 주차장 찾기
               </Text>
               <Image src="map.png" />
@@ -166,7 +168,7 @@ export const Main = () => {
                 handleClick('/finishSpot');
               }}
             >
-              <Text isFlex={true} margin="0 0 0.2rem 0">
+              <Text isFlex={true} margin="0 0 0.2rem 0" fontSize='15px'>
                 주차 인증하기
               </Text>
               <Image src="auth_kick.png" />
@@ -193,8 +195,8 @@ export const Main = () => {
                   'https://seoul-pm.eseoul.go.kr/mobile/report/qrcode.do';
               }}
             >
-              <Text isFlex={true}>불법 주차 킥보드 신고하기</Text>
-              <Text fontSize="9px" isFlex={true}>
+              <Text isFlex={true} fontSize='16.5px'>불법 주차 킥보드 신고하기</Text>
+              <Text fontSize="7.85px" isFlex={true}>
                 횡단보도, 건물 앞에 무단 주차한 킥보드를 제보해주세요
               </Text>
             </Box>
