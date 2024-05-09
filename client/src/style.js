@@ -23,8 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body  {
-    width: 390px;
-    height: 844px;
+    width: 393px;
+    height: 852px;
   }
   #root {
     background-color: #ffffff;
@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column
   }
 
-  @media (max-width: 393px) {
+  @media (max-width: 394px) {
     body {
       width: 100vw;
       height: 100vh;
