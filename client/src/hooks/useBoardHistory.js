@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {getBoardHistoryList} from "@/apis/getBoardHistoryList.js";
+import {useEffect, useState} from 'react';
+import {getBoardHistoryList} from '@/apis/getBoardHistoryList.js';
 
 export const useBoardHistory = () => {
   const [boardHistoryListValue, setBoardHistoryListValue] = useState([]);
@@ -8,13 +8,14 @@ export const useBoardHistory = () => {
   useEffect(() => {
     getBoardHistoryList()
       .then((res) => {
+        console.log(res);
         setBoardHistoryListValue(res.data.records);
         setPersonInfo(res.data.person);
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
   }, []);
 
-  return { boardHistoryListValue, personInfo };
+  return {boardHistoryListValue, personInfo};
 };
