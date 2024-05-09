@@ -14,7 +14,7 @@ function OnBoarding() {
         <Text isFlex={true}>올바른 공유킥보드 주차 문화 만들기</Text>
         <Text isFlex={true}>SPOT에서 함께 시작하세요!</Text>
         <Text isFlex={true} fontSize="10px">
-          로그인 후, 위치 정보 이용 동의 시 사용 가능합니다!
+          <br />로그인 후, 위치 정보 이용 동의 시 사용 가능합니다 &#10004;
         </Text>
       </S.TextArea>
       <KakaoLogin></KakaoLogin>
