@@ -12,21 +12,21 @@ export const Main = () => {
       gap="1rem"
     >
       <Box
-        width="85%"
-        height="40vh"
+        width="90%"
+        height="45vh"
         radius="1rem 1rem 1rem 1rem"
         background="#3A5AFE"
         isFlex={true}
         flexDirection="column"
         alignProp="center"
-        margin="0 0 2rem 0"
+        margin="0 0 1rem 0"
       >
         <Box width="90%" height="30%" isFlex={true}>
-          <Box width="80%" isFlex={true} flexDirection={'column'}>
+          <Box width="75%" isFlex={true} flexDirection={'column'}>
             <Text color="white">공유 킥보드로 만들어가는</Text>
             <Text color="white">스마트 에코 도시</Text>
           </Box>
-          <Box width="20%" isFlex={true} flexDirection={'column'}>
+          <Box width="25%" isFlex={true} flexDirection={'column'}>
             <Box width="100%" isFlex={true} alignProp={'center'}>
               <Image src="temp.png" />
               <Text color="white">17도</Text>
