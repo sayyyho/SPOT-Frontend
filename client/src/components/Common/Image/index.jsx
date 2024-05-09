@@ -8,6 +8,7 @@ export const Image = (props) => {
         src={`/src/assets/images/${props.src}`}
         alt={props.alt}
         height={props.height}
+        width={props.width}
       />
     </>
   );
@@ -17,4 +18,5 @@ Image.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   height: PropTypes.string,
+  width: PropTypes.string,
 };
