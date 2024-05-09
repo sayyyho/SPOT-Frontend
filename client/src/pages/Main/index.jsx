@@ -8,7 +8,7 @@ export const Main = () => {
     <Layout showHeader={true} headerItem="location">
       <Box
         width="90%"
-        height="30vh"
+        height="40vh"
         radius="1rem 1rem 1rem 1rem"
         background="#3A5AFE"
         isFlex={true}
@@ -53,16 +53,17 @@ export const Main = () => {
             </Text>
           </Box>
         </Box>
+        <Box
+          width="100%"
+          height="12vh"
+          radius="1rem 1rem 1rem 1rem"
+          background="#F8F8FA"
+          isFlex={true}
+          flexDirection="column"
+          alignProp="center"
+          margin="auto 0 0 0"
+        ></Box>
       </Box>
-      <Box
-        width="90%"
-        height="10vh"
-        radius="1rem 1rem 1rem 1rem"
-        background="#F8F8FA"
-        isFlex={true}
-        flexDirection="column"
-        alignProp="center"
-      ></Box>
     </Layout>
   );
 };
