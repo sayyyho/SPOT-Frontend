@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 
 function Text(props) {
   return (
-    <S.Text color={props.color} isFlex={props.isFlex} margin={props.margin} fontSize={props.fontSize}>
+    <S.Text
+      color={props.color}
+      isFlex={props.isFlex}
+      margin={props.margin}
+      fontSize={props.fontSize}
+      onClick={props.onClick}
+    >
       {props.children}
     </S.Text>
   );
@@ -13,7 +19,7 @@ Text.propTypes = {
   color: PropTypes.string,
   isFlex: PropTypes.bool,
   margin: PropTypes.string,
-  fontSize: PropTypes.string
+  fontSize: PropTypes.string,
 };
 
 export default Text;

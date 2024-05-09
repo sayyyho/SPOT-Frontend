@@ -2,8 +2,13 @@ import Layout from '@/components/Common/Layout/Layout';
 import Box from '@/components/Box';
 import Text from '@/components/Common/Text';
 import {Image} from '@/components/Common/Image';
+import {useNavigate} from 'react-router-dom';
 
 export const Main = () => {
+  const navigate = useNavigate();
+  const handleClick = (location) => {
+    navigate(location);
+  };
   return (
     <Layout
       showHeader={true}
@@ -54,7 +59,13 @@ export const Main = () => {
             isFlex={true}
             alignProp="center"
           >
-            <Text color="blue" isFlex={true}>
+            <Text
+              color="blue"
+              isFlex={true}
+              onClick={() => {
+                handleClick('/history');
+              }}
+            >
               탑승 이력
             </Text>
           </Box>
