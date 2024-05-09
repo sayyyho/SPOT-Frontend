@@ -183,6 +183,7 @@ export const Main = () => {
           <Text isFlex={true} color="blue" margin="1rem 0 0 0">
             현재 위치를 불러오는 중...
           </Text>
+
         </Wrapper>
       )}
     </>
