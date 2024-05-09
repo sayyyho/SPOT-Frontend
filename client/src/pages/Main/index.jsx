@@ -8,7 +8,7 @@ import useGeolocation from '@/hooks/useGeoLocation';
 import {Wrapper} from '@/components/Common/Wrapper';
 
 export const Main = () => {
-  const {loc, dong} = useGeolocation();
+  const {loc, dong, temp, humidity} = useGeolocation();
   const navigate = useNavigate();
   const handleClick = (location) => {
     navigate(location);
@@ -32,14 +32,37 @@ export const Main = () => {
                 <Text color="white">공유 킥보드로 만들어가는</Text>
                 <Text color="white">스마트 에코 도시</Text>
               </Box>
-              <Box width="25%" isFlex={true} flexDirection={'column'}>
-                <Box width="100%" isFlex={true} alignProp={'center'}>
-                  <Image src="temp.png" />
-                  <Text color="white">17도</Text>
+              <Box
+                width="25%"
+                isFlex={true}
+                flexDirection={'column'}
+                alignProp="center"
+                justifyProp="center"
+              >
+                <Box
+                  width="100%"
+                  height="50%"
+                  isFlex={true}
+                  alignProp={'center'}
+                  justifyProp="center"
+                >
+                  <Image src="temp.png" height="50%" />
+                  <Text color="white" fontSize="0.6rem">
+                    {temp}
+                  </Text>
                 </Box>
-                <Box width="100%" isFlex={true} alignProp={'center'}>
-                  <Image src="humidity.png" />
-                  <Text color="white">30%</Text>
+                <Box
+                  width="100%"
+                  height="50%"
+                  padding="0 0 0 0.3rem"
+                  isFlex={true}
+                  alignProp={'center'}
+                  justifyProp="center"
+                >
+                  <Image src="humidity.png" height="50%" />
+                  <Text margin="0 0 0 0.2rem" color="white" fontSize="0.6rem">
+                    {humidity}
+                  </Text>
                 </Box>
               </Box>
             </Box>

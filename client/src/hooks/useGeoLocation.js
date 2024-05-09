@@ -1,9 +1,12 @@
 import {useEffect, useState} from 'react';
 import {getLoc} from '@/apis/getLocation';
+import {getTempHum} from '@/apis/getTempHum';
 
 const useGeoLocation = () => {
   const [location, setLocation] = useState(null);
   const [dong, setDong] = useState(null);
+  const [temp, setTemp] = useState(null);
+  const [humidity, setHumidity] = useState(null);
 
   useEffect(() => {
     const getLocation = async () => {
@@ -33,10 +36,14 @@ const useGeoLocation = () => {
       getLoc(location.latitude, location.longitude).then((res) => {
         setDong(res.data.data.location);
       });
+      getTempHum(location.latitude, location.longitude).then((res) => {
+        setTemp(res.data.data.temperature);
+        setHumidity(res.data.data.humidity);
+      });
     }
   }, [location]);
 
-  return {location, dong};
+  return {location, dong, temp, humidity};
 };
 
 export default useGeoLocation;
