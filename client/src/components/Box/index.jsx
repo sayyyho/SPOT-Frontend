@@ -18,6 +18,7 @@ function Box(props) {
       gapProp={props.gapProp}
       onClick={props.onClick}
       isCursor={props.isCursor}
+      style={props.style}
     >
       {props.children}
     </S.Box>
@@ -39,6 +40,7 @@ Box.propTypes = {
   flexDirection: PropTypes.string,
   gapProp: PropTypes.string,
   isCursor: PropTypes.bool,
+  style: PropTypes.object,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
