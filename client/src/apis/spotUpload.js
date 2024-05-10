@@ -10,7 +10,7 @@ export const spotUpload = async (imageFile) => {
 
     const formData = new FormData();
     formData.append('image', imageFile);
-    formData.append('photoRequest', JSON.stringify(data));
+    formData.append('dto', JSON.stringify(data));
 
     const response = await instance.post(`/api/boarding-record`, formData, {
       headers: {

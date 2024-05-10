@@ -9,14 +9,12 @@ const Parking = ({greyBoxStyle}) => {
   const inputRef = useRef();
   const [imageSrc, setImageSrc] = useState('');
   const [imgFlag, setimgFlag] = useState(false);
-  const [sendImg, setSendImg] = useState(null);
 
   const onUploadImage = useCallback(async (e) => {
     if (!e.target.files) {
       return;
     }
     const file = e.target.files[0];
-    setSendImg(file);
     const reader = new FileReader();
 
     if (file) {
@@ -34,7 +32,7 @@ const Parking = ({greyBoxStyle}) => {
   };
 
   const handleButtonClick = async () => {
-    const res = await spotUpload(sendImg);
+    const res = await spotUpload(imageSrc);
     console.log(res);
   };
 
