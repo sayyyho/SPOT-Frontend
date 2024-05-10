@@ -10,6 +10,12 @@ export const Box = styled.div`
   color: ${(props) => (props.color ? props.color : 'black')};
   background-color: ${(props) => `${props.background}`};
   display: ${(props) => (props.isFlex ? 'flex' : 'block')};
-  justify-content: ${(props) => (props.isFlex ? 'center' : 'none')};
-  flex-direction: ${(props) => `${props.flexDirection}`};
+  justify-content: ${(props) =>
+    props.justifyProp ? `${props.justifyProp}` : 'center'};
+  gap: ${(props) => (props.gapProp ? `${props.gapProp}` : 0)};
+  flex-direction: ${(props) =>
+    props.isFlex ? `${props.flexDirection}` : 'row'};
+  align-items: ${(props) =>
+    props.alignProp ? `${props.alignProp}` : 'stretch'};
+  cursor: ${(props) => (props.isCursor ? 'pointer' : 'default')};
 `;

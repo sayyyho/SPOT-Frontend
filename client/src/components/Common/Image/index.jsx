@@ -9,6 +9,7 @@ export const Image = (props) => {
         alt={props.alt}
         height={props.height}
         width={props.width}
+        onClick={props.onClick}
       />
     </>
   );
@@ -19,4 +20,5 @@ Image.propTypes = {
   alt: PropTypes.string,
   height: PropTypes.string,
   width: PropTypes.string,
+  onClick: PropTypes.func,
 };
