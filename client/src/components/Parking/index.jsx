@@ -32,7 +32,7 @@ const Parking = ({greyBoxStyle}) => {
   };
 
   const handleButtonClick = async () => {
-    const res = await spotUpload();
+    const res = await spotUpload(imageSrc);
     console.log(res);
   };
 
