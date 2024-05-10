@@ -6,6 +6,7 @@ import FinishSpot from './pages/FinishSpot';
 import {Main} from './pages/Main';
 import {loader} from './constant/mainLoader';
 import {FindSpot} from './pages/FindSpot';
+import Find_1 from './components/Common/Find_1';
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: '/finishSpot',
         element: <FinishSpot />,
+      },
+      {
+        path: '/finishSpot_1',
+        element: <Find_1 />,
       },
     ],
   },
