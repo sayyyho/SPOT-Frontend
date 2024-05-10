@@ -10,7 +10,7 @@ const History = () => {
     <Layout showHeader={true} headerItem="arrow">
       {personInfo && (
         <S.Container>
-          <h2>탑승 이력 조회하기</h2><br />
+          <h2>탑승 이력 조회하기</h2>
           <S.BoardHistoryCard>
             <S.BoardHistoryCardContent>
               <b>{personInfo.nickname}</b>님,

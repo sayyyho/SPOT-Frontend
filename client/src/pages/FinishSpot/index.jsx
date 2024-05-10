@@ -14,12 +14,11 @@ const FindKickSpot = () => {
     setStep(step + 1);
   };
   const greyBoxStyle = {
-    width: '78%',
-    height: '66%',
+    width: '70%',
+    height: '65%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-between',
-    justifyContent: 'center',
     backgroundColor: '#EDEDED',
     borderRadius: '20px',
     padding: '1rem',
@@ -29,8 +28,8 @@ const FindKickSpot = () => {
   return (
     <Layout showHeader={true} headerItem="arrow">
       <S.Container>
-        <h2>주차 인증하기</h2><br />
-        {showParking ? (<S.AdditionalText><h3>주차 사진 업로드</h3></S.AdditionalText>) : (<Box margin="28px"/>)}
+        <h2>주차 인증하기</h2>
+        {showParking ? (<S.AdditionalText>주차 사진 업로드</S.AdditionalText>) : ( <Box margin="18px" /> )}
         <Box style={greyBoxStyle}>
           {showParking ? (
             <>
