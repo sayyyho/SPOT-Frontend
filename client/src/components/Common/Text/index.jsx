@@ -9,6 +9,7 @@ function Text(props) {
       margin={props.margin}
       fontSize={props.fontSize}
       onClick={props.onClick}
+      isAbsolute={props.isAbsolute}
     >
       {props.children}
     </S.Text>
@@ -20,6 +21,7 @@ Text.propTypes = {
   isFlex: PropTypes.bool,
   margin: PropTypes.string,
   fontSize: PropTypes.string,
+  isAbsolute: PropTypes.bool,
 };
 
 export default Text;

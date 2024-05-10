@@ -26,6 +26,16 @@ export const GlobalStyle = createGlobalStyle`
     width: 393px;
     height: 852px;
   }
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0;
+    margin-block-end: 0.8em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
   #root {
     background-color: #ffffff;
     height: 100%;

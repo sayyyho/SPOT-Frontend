@@ -10,13 +10,13 @@ const Header = (props) => {
     navigate(-1);
   };
   return (
-    <S.Container>
+    <S.Container isAbsolute={props.isAbsolute}>
       {props.item === 'arrow' ? (
         <Image src="arrow_left.png" alt="화살표" onClick={handleBack}></Image>
       ) : (
         <>
           <Image src="location.png" alt="위치"></Image>
-          <Text>충무로</Text>
+          <Text>{props.dong}</Text>
         </>
       )}
     </S.Container>
@@ -25,6 +25,8 @@ const Header = (props) => {
 
 Header.propTypes = {
   item: PropTypes.string.isRequired,
+  isAbsolute: PropTypes.bool,
+  dong: PropTypes.string,
 };
 
 export default Header;
