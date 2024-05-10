@@ -5,7 +5,7 @@ import Text from '../Common/Text';
 import {useCallback, useRef, useState} from 'react';
 import {spotUpload} from '@/apis/spotUpload';
 
-const Parking = ({greyBoxStyle}) => {
+const Parking = ({greyBoxStyle, onPrevClick}) => {
   const inputRef = useRef();
   const [imageSrc, setImageSrc] = useState('');
   const [imgFlag, setimgFlag] = useState(false);
@@ -62,6 +62,7 @@ const Parking = ({greyBoxStyle}) => {
             radius="7px"
             background="#989898"
             isFlex={true}
+            onClick={onPrevClick}
           >
             <Text color="white" isFlex={true}>
               이전

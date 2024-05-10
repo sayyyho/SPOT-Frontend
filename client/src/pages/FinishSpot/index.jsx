@@ -13,6 +13,13 @@ const FindKickSpot = () => {
     setShowParking(true);
     setStep(step + 1);
   };
+
+  const handlePrevClick = () => {
+    if (step === 2) {
+      setStep(step - 1);
+    }
+  };
+
   const greyBoxStyle = {
     width: '70%',
     height: '65%',
@@ -38,7 +45,7 @@ const FindKickSpot = () => {
           {showParking ? (
             <>
               {step === 1 && <Find_1 onNextClick={handleNextClick} />}
-              {step === 2 && <Parking />}
+              {step === 2 && <Parking onPrevClick={handlePrevClick} />}
             </>
           ) : (
             <Find_1 onNextClick={handleNextClick} />
