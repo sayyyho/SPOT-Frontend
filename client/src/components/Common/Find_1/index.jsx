@@ -11,9 +11,9 @@ const Find_1 = ({ onNextClick, greyBoxStyle }) => {
     };
   return (
     <S.Container>
-       <Box style={greyBoxStyle} width="100%">
+       <Box style={greyBoxStyle} width="100%" height="78%">
             <S.AdditionalText><h3>킥보드 종류</h3></S.AdditionalText>
-            <Box width="100%" height="10%" border="1px solid #ccc" borderRadius="20px">
+            <Box width="100%" height="8%" border="1px solid #ccc" borderRadius="20px">
                 <textarea
                     value={content}
                     onChange={handleChange}
@@ -22,7 +22,7 @@ const Find_1 = ({ onNextClick, greyBoxStyle }) => {
                 />
             </Box>
             <S.AdditionalText><h3>주행 거리</h3></S.AdditionalText>
-            <Box width="100%" height="10%" border="1px solid #ccc" borderRadius="20px">
+            <Box width="100%" height="8%" border="1px solid #ccc" borderRadius="20px">
                 <textarea
                     value={content}
                     onChange={handleChange}
@@ -31,7 +31,7 @@ const Find_1 = ({ onNextClick, greyBoxStyle }) => {
                 />
             </Box>
             <S.AdditionalText><h3>주행 시간</h3></S.AdditionalText>
-            <Box width="100%" height="10%" border="1px solid #ccc" borderRadius="20px">
+            <Box width="100%" height="8%" border="1px solid #ccc" borderRadius="20px">
                 <textarea
                     value={content}
                     onChange={handleChange}
@@ -53,7 +53,6 @@ const Find_1 = ({ onNextClick, greyBoxStyle }) => {
                 다음
               </Text>
         </Box>
-        <Box margin="10%" />
     </S.Container>
   );
 };

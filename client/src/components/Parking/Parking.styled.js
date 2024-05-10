@@ -14,7 +14,7 @@ export const ImageContainer = styled.div`
   border-radius: 20px;
   img {
     width: 100%;
-    height: 100%;
+    height: 88%;
     object-fit: cover;
   }
 `;
@@ -26,6 +26,6 @@ export const BoxContainer = styled.div `
   justify-content: space-between;
   align-items: center;
   gap: 37%;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 8%;
+  margin-bottom: 13%;
 `
