@@ -11,6 +11,8 @@ const useGeoLocation = () => {
   const [point, setPoint] = useState(null);
   const [pm10, setPm10] = useState(null);
   const [pm25, setPm25] = useState(null);
+  const [pm10Color, setPm10Color] = useState('black');
+  const [pm25Color, setPm25Color] = useState('black');
 
   useEffect(() => {
     const getLocation = async () => {
@@ -48,11 +50,27 @@ const useGeoLocation = () => {
         setPoint(res.data.data.point);
         setPm10(res.data.data.pm10);
         setPm25(res.data.data.pm25);
+
+        const mapQualityToColor = (quality) => {
+          switch (quality) {
+            case '좋음':
+              return 'blue';
+            case '보통':
+              return 'green';
+            case '나쁨':
+              return 'orange';
+            case '매우 나쁨':
+              return 'red';
+            default:
+              return 'grey'; // 알 수 없는 경우 기본 색상
+          }
+        };
+        setPm10Color(mapQualityToColor(res.data.data.pm10));
+        setPm25Color(mapQualityToColor(res.data.data.pm25));
       });
     }
   }, [location]);
-
-  return {location, dong, temp, humidity, point, pm10, pm25};
+  return {dong, temp, humidity, point, pm10, pm25, pm10Color, pm25Color};
 };
 
 export default useGeoLocation;
