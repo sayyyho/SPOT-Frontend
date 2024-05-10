@@ -27,7 +27,7 @@ export const FindSpot = () => {
           //마커가 표시 될 지도
           map: map,
           //마커가 표시 될 위치
-          position: new kakao.maps.LatLng(el.lat, el.lng),
+          position: new kakao.maps.LatLng(el.lat, el.lon),
           //마커에 hover시 나타날 title
           title: el.detail_address,
         });
