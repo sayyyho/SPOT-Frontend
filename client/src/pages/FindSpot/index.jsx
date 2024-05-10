@@ -9,18 +9,30 @@ export const FindSpot = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await findKickboard();
-      console.log(res);
+      const spotList = res.data.data.parkingLotList;
+      console.log(spotList);
+      const container = document.getElementById('map');
+      const options = {
+        center: new kakao.maps.LatLng(
+          localStorage.getItem('latitude'),
+          localStorage.getItem('longitude'),
+        ),
+        level: 3,
+      };
+      const map = new kakao.maps.Map(container, options);
+      spotList.forEach((el) => {
+        // 마커를 생성합니다
+        console.log(el);
+        new kakao.maps.Marker({
+          //마커가 표시 될 지도
+          map: map,
+          //마커가 표시 될 위치
+          position: new kakao.maps.LatLng(el.lat, el.lon),
+          //마커에 hover시 나타날 title
+          title: el.detail_address,
+        });
+      });
     };
-    const container = document.getElementById('map');
-    const options = {
-      center: new kakao.maps.LatLng(
-        localStorage.getItem('latitude'),
-        localStorage.getItem('longitude'),
-      ),
-      level: 3,
-    };
-    const map = new kakao.maps.Map(container, options);
-    console.log(map);
     getData();
   }, []);
   return (

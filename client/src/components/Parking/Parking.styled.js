@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -7,6 +7,7 @@ export const Container = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  cursor: pointer;
   width: 100%;
   overflow: hidden;
   margin-top: 2rem;
@@ -18,7 +19,7 @@ export const ImageContainer = styled.div`
     object-fit: cover;
   }
 `;
-export const BoxContainer = styled.div `
+export const BoxContainer = styled.div`
   width: 100%;
   height: 12%;
   display: flex;
@@ -28,4 +29,4 @@ export const BoxContainer = styled.div `
   gap: 37%;
   margin-top: 8%;
   margin-bottom: 13%;
-`
+`;
