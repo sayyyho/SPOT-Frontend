@@ -6,8 +6,17 @@ import {useNavigate} from 'react-router-dom';
 import useGeolocation from '@/hooks/useGeoLocation';
 
 export const Main = () => {
-  const {dong, temp, humidity, point, pm10, pm25, pm10Color, pm25Color} =
-    useGeolocation();
+  const {
+    dong,
+    temp,
+    humidity,
+    point,
+    pm10,
+    pm25,
+    pm10Color,
+    pm25Color,
+    errorFlag,
+  } = useGeolocation();
   const navigate = useNavigate();
   const handleClick = (location) => {
     navigate(location);
@@ -18,7 +27,11 @@ export const Main = () => {
         showHeader={true}
         headerItem="location"
         gap="1rem"
-        dong={dong ? dong : '현재 위치 수집 허용 후 이용해주세요.'}
+        dong={
+          dong ||
+          (errorFlag && '현재 위치 수집을 허용해주세요') ||
+          '동네 정보를 불러오는 중...'
+        }
       >
         <Box
           width="90%"

@@ -13,6 +13,7 @@ const useGeoLocation = () => {
   const [pm25, setPm25] = useState(null);
   const [pm10Color, setPm10Color] = useState('black');
   const [pm25Color, setPm25Color] = useState('black');
+  const [errorFlag, setErrorFlag] = useState(false);
 
   useEffect(() => {
     const getLocation = async () => {
@@ -23,7 +24,20 @@ const useGeoLocation = () => {
             setLocation({latitude, longitude});
           },
           (error) => {
-            console.error('Error getting location:', error);
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                console.log('위치 정보 수집이 거부되었습니다.');
+                setErrorFlag(true);
+                break;
+              case error.TIMEOUT:
+                console.log('위치 정보 요청 시간 초과.');
+                setErrorFlag(true);
+                break;
+              default:
+                console.log('알 수 없는 오류가 발생했습니다.');
+                setErrorFlag(true);
+                break;
+            }
           },
         );
       } else {
@@ -70,7 +84,17 @@ const useGeoLocation = () => {
       });
     }
   }, [location]);
-  return {dong, temp, humidity, point, pm10, pm25, pm10Color, pm25Color};
+  return {
+    dong,
+    temp,
+    humidity,
+    point,
+    pm10,
+    pm25,
+    pm10Color,
+    pm25Color,
+    errorFlag,
+  };
 };
 
 export default useGeoLocation;
