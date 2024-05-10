@@ -1,3 +1,4 @@
+import React from 'react';
 import * as S from './FindSpot.styled';
 import {useEffect} from 'react';
 import Header from '@/components/Common/Header';
@@ -6,11 +7,14 @@ import {findKickboard} from '@/apis/findKickboard';
 const {kakao} = window;
 
 export const FindSpot = () => {
+  const [positions, setPositions] = React.useState([]);
   useEffect(() => {
     const getData = async () => {
       const res = await findKickboard();
-      console.log(res);
+      const spotList = res.data.data.parkingLotList;
+      setPositions(spotList);
     };
+
     const container = document.getElementById('map');
     const options = {
       center: new kakao.maps.LatLng(
@@ -20,9 +24,19 @@ export const FindSpot = () => {
       level: 3,
     };
     const map = new kakao.maps.Map(container, options);
-    console.log(map);
+    positions.forEach((el) => {
+      // 마커를 생성합니다
+      new kakao.maps.Marker({
+        //마커가 표시 될 지도
+        map: map,
+        //마커가 표시 될 위치
+        position: new kakao.maps.LatLng(el.lat, el.lng),
+        //마커에 hover시 나타날 title
+        title: el.detail_address,
+      });
+    });
     getData();
-  }, []);
+  }, [positions]);
   return (
     <S.Wrapper id="map">
       <Text color="black" isAbsolute={true} margin="1rem 0 0 0" isFlex={true}>

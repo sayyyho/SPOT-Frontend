@@ -6,7 +6,6 @@ export const Layout = styled.div`
   display: flex;
   justify-content: ${(props) =>
     props.isBetween ? 'space-between' : 'center'}; 
-
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
