@@ -11,7 +11,7 @@ export const FindSpot = () => {
       const res = await findKickboard();
       const spotList = res.data.data.parkingLotList;
       console.log(spotList);
-      const container = document.getElementById('map');
+      const container = document.getElementById('root');
       const options = {
         center: new kakao.maps.LatLng(
           localStorage.getItem('latitude'),
