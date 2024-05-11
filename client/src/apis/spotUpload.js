@@ -12,7 +12,11 @@ export const spotUpload = async (imageFile) => {
     formData.append('image', imageFile);
     formData.append('dto', JSON.stringify(data));
 
-    const response = await instance.post(`/api/boarding-record`, formData);
+    const response = await instance.post(`/api/boarding-record`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return response;
   } catch (error) {
     if (isAxiosError(error)) {
