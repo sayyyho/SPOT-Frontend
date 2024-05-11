@@ -9,6 +9,7 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
   const inputRef = useRef();
   const [imageSrc, setImageSrc] = useState('');
   const [imgFlag, setimgFlag] = useState(false);
+  const [reqImg, setReqImg] = useState('');
 
   const onUploadImage = useCallback(async (e) => {
     if (!e.target.files) {
@@ -18,6 +19,7 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
     const reader = new FileReader();
 
     if (file) {
+      setReqImg(file);
       reader.readAsDataURL(file);
       reader.onload = () => {
         setImageSrc(reader.result); // 파일의 컨텐츠
@@ -32,7 +34,7 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
   };
 
   const handleButtonClick = async () => {
-    const res = await spotUpload(imageSrc);
+    const res = await spotUpload(reqImg);
     console.log(res);
   };
 
