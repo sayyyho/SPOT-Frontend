@@ -4,8 +4,12 @@ import Parking from '../../components/Parking';
 import Layout from '@/components/Common/Layout/Layout';
 import Box from '@/components/Box';
 import Find_1 from '@/components/Common/Find_1';
+import {spotUpload} from '@/apis/spotUpload';
+import Swal from 'sweetalert2';
+import {useNavigate} from 'react-router-dom';
 
 const FindKickSpot = () => {
+  const navigation = useNavigate();
   const [showParking, setShowParking] = useState(false);
   const [step, setStep] = useState(1);
 
@@ -17,6 +21,36 @@ const FindKickSpot = () => {
   const handlePrevClick = () => {
     if (step === 2) {
       setStep(step - 1);
+    }
+  };
+
+  const handleButtonClick = async (reqImg) => {
+    try {
+      const res = await spotUpload(reqImg);
+      if (res.data.success) {
+        Swal.fire({
+          title: `주차 인증 완료!`,
+          text: '메인 페이지로 넘어갑니다.',
+          icon: 'success',
+          timer: 1000,
+          showConfirmButton: false,
+          timerProgressBar: true,
+        }).then(() => {
+          navigation('/');
+        });
+      } else {
+        Swal.fire({
+          title: '킥보드 상태를 확인해주세요!',
+          icon: `error`,
+          confirmButtonColor: '#ed8b00',
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: '킥보드 상태를 확인해주세요!',
+        icon: `error`,
+        confirmButtonColor: '#ed8b00',
+      });
     }
   };
 
@@ -45,7 +79,12 @@ const FindKickSpot = () => {
           {showParking ? (
             <>
               {step === 1 && <Find_1 onNextClick={handleNextClick} />}
-              {step === 2 && <Parking onPrevClick={handlePrevClick} />}
+              {step === 2 && (
+                <Parking
+                  onPrevClick={handlePrevClick}
+                  onSubmit={handleButtonClick}
+                />
+              )}
             </>
           ) : (
             <Find_1 onNextClick={handleNextClick} />
@@ -55,4 +94,5 @@ const FindKickSpot = () => {
     </Layout>
   );
 };
+
 export default FindKickSpot;
