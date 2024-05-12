@@ -3,12 +3,12 @@ import ParkingImage from '../../assets/images/Parking.png';
 import Box from '../Box';
 import Text from '../Common/Text';
 import {useCallback, useRef, useState} from 'react';
-import {spotUpload} from '@/apis/spotUpload';
 
-const Parking = ({greyBoxStyle, onPrevClick}) => {
+const Parking = ({greyBoxStyle, onPrevClick, onSubmit}) => {
   const inputRef = useRef();
   const [imageSrc, setImageSrc] = useState('');
   const [imgFlag, setimgFlag] = useState(false);
+  const [reqImg, setReqImg] = useState('');
 
   const onUploadImage = useCallback(async (e) => {
     if (!e.target.files) {
@@ -18,6 +18,7 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
     const reader = new FileReader();
 
     if (file) {
+      setReqImg(file);
       reader.readAsDataURL(file);
       reader.onload = () => {
         setImageSrc(reader.result); // 파일의 컨텐츠
@@ -29,11 +30,6 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
 
   const handleClick = () => {
     inputRef.current.click(imageSrc);
-  };
-
-  const handleButtonClick = async () => {
-    const res = await spotUpload(imageSrc);
-    console.log(res);
   };
 
   return (
@@ -73,7 +69,13 @@ const Parking = ({greyBoxStyle, onPrevClick}) => {
             background="#3A5AFE"
             isFlex={true}
           >
-            <Text color="white" isFlex={true} onClick={handleButtonClick}>
+            <Text
+              color="white"
+              isFlex={true}
+              onClick={() => {
+                onSubmit(reqImg);
+              }}
+            >
               제출하기
             </Text>
           </Box>
