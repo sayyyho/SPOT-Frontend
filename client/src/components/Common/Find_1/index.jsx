@@ -3,22 +3,37 @@ import Box from '../../Box';
 import Text from '../Text';
 import {FindItem} from './FindItem';
 
-const Find_1 = ({onNextClick, greyBoxStyle}) => {
+const Find_1 = ({inputs, onInputChange, onNextClick}) => {
   return (
     <S.Container>
-      <Box style={greyBoxStyle} width="100%" height="78%">
+      <Box width="100%" height="78%">
         <S.AdditionalText>
-          <h3>킥보드 종류</h3>
+          <h3 style={{marginBottom: '0.5rem'}}>킥보드 종류</h3>
         </S.AdditionalText>
-        <FindItem placeholder="Swing" key="0" />
+        <FindItem
+          placeholder="ex) Swing"
+          name="kickType"
+          value={inputs.kickType}
+          onChange={onInputChange}
+        />
         <S.AdditionalText>
-          <h3>주행 거리</h3>
+          <h3 style={{marginBottom: '0.5rem'}}>주행 거리 (단위 : km)</h3>
         </S.AdditionalText>
-        <FindItem placeholder="2.3km" key="1" />
+        <FindItem
+          placeholder="ex) 1.6"
+          name="distance"
+          value={inputs.distance}
+          onChange={onInputChange}
+        />
         <S.AdditionalText>
-          <h3>주행 시간</h3>
+          <h3 style={{marginBottom: '0.5rem'}}>주행 시간 (단위 : 분)</h3>
         </S.AdditionalText>
-        <FindItem placeholder="10분" key="2" />
+        <FindItem
+          placeholder="ex) 7"
+          name="time"
+          value={inputs.time}
+          onChange={onInputChange}
+        />
       </Box>
       <Box
         width="35%"

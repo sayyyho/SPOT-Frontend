@@ -1,45 +1,24 @@
+import {useRef} from 'react';
 import * as S from './Parking.styled';
 import ParkingImage from '../../assets/images/Parking.png';
 import Box from '../Box';
 import Text from '../Common/Text';
-import {useCallback, useRef, useState} from 'react';
 
-const Parking = ({greyBoxStyle, onPrevClick, onSubmit}) => {
+const Parking = ({imageSrc, imgFlag, onUploadImage, onSubmit, onPrevClick}) => {
   const inputRef = useRef();
-  const [imageSrc, setImageSrc] = useState('');
-  const [imgFlag, setimgFlag] = useState(false);
-  const [reqImg, setReqImg] = useState('');
-
-  const onUploadImage = useCallback(async (e) => {
-    if (!e.target.files) {
-      return;
-    }
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    if (file) {
-      setReqImg(file);
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        setImageSrc(reader.result); // 파일의 컨텐츠
-      };
-      setimgFlag(true);
-      console.log(file);
-    }
-  }, []);
 
   const handleClick = () => {
-    inputRef.current.click(imageSrc);
+    inputRef.current.click();
   };
 
   return (
     <S.Container>
-      <Box style={greyBoxStyle}>
+      <Box width="100%">
         <S.ImageContainer onClick={handleClick}>
           {imgFlag ? (
-            <img src={imageSrc} alt="upload" />
+            <S.CustomImg src={imageSrc} alt="upload" />
           ) : (
-            <img src={ParkingImage} alt="주차 이미지" />
+            <S.CustomImg src={ParkingImage} alt="주차 이미지" />
           )}
           <input
             type="file"
@@ -69,13 +48,7 @@ const Parking = ({greyBoxStyle, onPrevClick, onSubmit}) => {
             background="#3A5AFE"
             isFlex={true}
           >
-            <Text
-              color="white"
-              isFlex={true}
-              onClick={() => {
-                onSubmit(reqImg);
-              }}
-            >
+            <Text color="white" isFlex={true} onClick={onSubmit}>
               제출하기
             </Text>
           </Box>
