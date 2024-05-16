@@ -1,12 +1,8 @@
 import {isAxiosError} from 'axios';
 import {instance} from './axios';
 
-export const spotUpload = async (imageFile) => {
+export const spotUpload = async (imageFile, data) => {
   try {
-    const data = {
-      distance: 1.2,
-      time: 10,
-    };
     const json = JSON.stringify(data);
     const blob = new Blob([json], {type: 'application/json'});
     const formData = new FormData();

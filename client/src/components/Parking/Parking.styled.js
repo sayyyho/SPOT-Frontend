@@ -13,11 +13,6 @@ export const ImageContainer = styled.div`
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 20px;
-  img {
-    width: 100%;
-    height: 88%;
-    object-fit: cover;
-  }
 `;
 export const BoxContainer = styled.div`
   width: 100%;
@@ -29,4 +24,11 @@ export const BoxContainer = styled.div`
   gap: 37%;
   margin-top: 8%;
   margin-bottom: 13%;
+`;
+
+export const CustomImg = styled.img`
+  /* max-width: 100%; */
+  width: 100%;
+  max-height: 40vh;
+  object-fit: cover;
 `;
