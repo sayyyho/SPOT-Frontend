@@ -67,9 +67,18 @@ const FinishSpot = () => {
     const data = {
       ...inputs,
     };
+    Swal.fire({
+      title: '이미지 판별중...',
+      text: '잠시만 기다려 주세요.',
+      allowOutsideClick: false,
+      onBeforeOpen: () => {
+        Swal.showLoading();
+      },
+    });
 
     try {
       const res = await spotUpload(reqImg, data);
+
       if (res.data.success) {
         Swal.fire({
           title: '주차 인증 완료!',
