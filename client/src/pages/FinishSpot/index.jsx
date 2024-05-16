@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useCallback} from 'react';
 import * as S from './FinishSpot.styled';
 import Parking from '../../components/Parking';
 import Layout from '@/components/Common/Layout/Layout';
@@ -8,14 +8,36 @@ import {spotUpload} from '@/apis/spotUpload';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom';
 
-const FindKickSpot = () => {
-  const navigation = useNavigate();
-  const [showParking, setShowParking] = useState(false);
+const FinishSpot = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [inputs, setInputs] = useState({
+    kickType: '',
+    distance: '',
+    time: '',
+  });
+  const [imageSrc, setImageSrc] = useState('');
+  const [imgFlag, setImgFlag] = useState(false);
+  const [reqImg, setReqImg] = useState('');
+
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
 
   const handleNextClick = () => {
-    setShowParking(true);
-    setStep(step + 1);
+    if (inputs.kickType && inputs.distance && inputs.time) {
+      setStep(step + 1);
+    } else {
+      Swal.fire({
+        title: '모든 항목을 입력해주세요!',
+        icon: 'error',
+        confirmButtonColor: '#ed8b00',
+      });
+    }
   };
 
   const handlePrevClick = () => {
@@ -24,31 +46,52 @@ const FindKickSpot = () => {
     }
   };
 
-  const handleButtonClick = async (reqImg) => {
+  const onUploadImage = useCallback((e) => {
+    if (!e.target.files) {
+      return;
+    }
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    if (file) {
+      setReqImg(file);
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        setImageSrc(reader.result);
+      };
+      setImgFlag(true);
+    }
+  }, []);
+
+  const handleButtonClick = async () => {
+    const data = {
+      ...inputs,
+    };
+
     try {
-      const res = await spotUpload(reqImg);
+      const res = await spotUpload(reqImg, data);
       if (res.data.success) {
         Swal.fire({
-          title: `주차 인증 완료!`,
+          title: '주차 인증 완료!',
           text: '메인 페이지로 넘어갑니다.',
           icon: 'success',
           timer: 1000,
           showConfirmButton: false,
           timerProgressBar: true,
         }).then(() => {
-          navigation('/');
+          navigate('/');
         });
       } else {
         Swal.fire({
           title: '킥보드 상태를 확인해주세요!',
-          icon: `error`,
+          icon: 'error',
           confirmButtonColor: '#ed8b00',
         });
       }
     } catch (error) {
       Swal.fire({
         title: '킥보드 상태를 확인해주세요!',
-        icon: `error`,
+        icon: 'error',
         confirmButtonColor: '#ed8b00',
       });
     }
@@ -70,24 +113,25 @@ const FindKickSpot = () => {
     <Layout showHeader={true} headerItem="arrow">
       <S.Container>
         <h2>주차 인증하기</h2>
-        {showParking ? (
-          <S.AdditionalText>주차 사진 업로드</S.AdditionalText>
-        ) : (
-          <Box margin="18px" />
-        )}
+        <Box margin="18px" />
         <Box style={greyBoxStyle}>
-          {showParking ? (
-            <>
-              {step === 1 && <Find_1 onNextClick={handleNextClick} />}
-              {step === 2 && (
-                <Parking
-                  onPrevClick={handlePrevClick}
-                  onSubmit={handleButtonClick}
-                />
-              )}
-            </>
-          ) : (
-            <Find_1 onNextClick={handleNextClick} />
+          {step === 1 && (
+            <Find_1
+              inputs={inputs}
+              onInputChange={handleInputChange}
+              onNextClick={handleNextClick}
+              greyBoxStyle={greyBoxStyle}
+            />
+          )}
+          {step === 2 && (
+            <Parking
+              imageSrc={imageSrc}
+              imgFlag={imgFlag}
+              onUploadImage={onUploadImage}
+              onSubmit={handleButtonClick}
+              onPrevClick={handlePrevClick}
+              greyBoxStyle={greyBoxStyle}
+            />
           )}
         </Box>
       </S.Container>
@@ -95,4 +139,4 @@ const FindKickSpot = () => {
   );
 };
 
-export default FindKickSpot;
+export default FinishSpot;
