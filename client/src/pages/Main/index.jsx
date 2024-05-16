@@ -49,7 +49,7 @@ export const Main = () => {
                 공유 킥보드로 만들어가는
               </Text>
               <Text color="white" fontSize="15px">
-                스마트 에코 도시
+                스마트 에코 도시 서울
               </Text>
             </Box>
             <Box
